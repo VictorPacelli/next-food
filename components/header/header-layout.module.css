@@ -21,6 +21,14 @@
   font-size: 1.25rem;
 }
 
+.nav li {
+  display: flex;
+}
+
+.nav p {
+  margin: 0;
+}
+
 .nav a {
   text-decoration: none;
   color: #ddd6cb;
