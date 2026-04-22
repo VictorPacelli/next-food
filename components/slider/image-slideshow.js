@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 
+import Image from 'next/image';
 import burgerImg from '@/assets/burger.jpg';
 import curryImg from '@/assets/curry.jpg';
 import dumplingsImg from '@/assets/dumplings.jpg';
@@ -26,14 +26,10 @@ export default function ImageSlideshow() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-   const changeImage = setTimeout(()=>{
-      if(currentImageIndex < images.length){
-        setCurrentImageIndex(currIndex => currIndex++)
-      }else{
-        setCurrentImageIndex(0)
-      }
-    },5000)
-    return () => clearTimeout(changeImage)
+   const changeImage = setInterval(()=>{
+      setCurrentImageIndex(currImage => currImage < (images.length - 1) ? currImage + 1 : 0 )
+    },3500)
+    return () => clearInterval(changeImage)
   }
   
     , [])
